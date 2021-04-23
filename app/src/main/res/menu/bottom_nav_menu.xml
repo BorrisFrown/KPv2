@@ -2,10 +2,22 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/home"
-        android:title="home"
+        android:title="Home"
         android:icon="@drawable/home_icon"/>
     <item
         android:id="@+id/speakers"
-        android:title="speakers"
+        android:title="Speakers"
         android:icon="@drawable/speakers_icon"/>
+    <item
+        android:id="@+id/worship"
+        android:title="Worship"
+        android:icon="@drawable/worship_icon"/>
+    <item
+        android:id="@+id/schedule"
+        android:title="Schedule"
+        android:icon="@drawable/schedule_icon"/>
+    <item
+        android:id="@+id/breakouts"
+        android:title="Breakouts"
+        android:icon="@drawable/breakouts_icon"/>
 </menu>

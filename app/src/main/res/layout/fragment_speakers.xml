@@ -10,14 +10,147 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="speakers"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:stretchColumns="1, 2">
+
+                    <TableRow
+                        android:id="@+id/speaker1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:clickable="true"
+                        android:focusable="true">
+
+                        <ImageView
+                            android:id="@+id/imageView"
+                            android:layout_width="120dp"
+                            android:layout_height="120dp"
+                            android:layout_margin="5dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/van_cochrane" />
+
+                        <TextView
+                            android:id="@+id/speakername1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/van_name" />
+
+                        <Button
+                            android:id="@+id/VanButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="10dp"
+                            android:text="Button"
+                            android:onClick="showVanDesc"/>
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/speaker2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/imageView2"
+                            android:layout_width="120dp"
+                            android:layout_height="120dp"
+                            android:layout_margin="5dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/bob_hazlett" />
+
+                        <TextView
+                            android:id="@+id/speakername2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="Bob Hazlett" />
+
+                        <Button
+                            android:id="@+id/vanButton2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="10dp"
+                            android:onClick="showBobDesc"
+                            android:text="Button" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/speaker3"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/imageView3"
+                            android:layout_width="120dp"
+                            android:layout_height="120dp"
+                            android:layout_margin="5dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/putty_putman" />
+
+                        <TextView
+                            android:id="@+id/speakername3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="Putty Putman" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/speaker4"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/imageView4"
+                            android:layout_width="120dp"
+                            android:layout_height="120dp"
+                            android:layout_margin="5dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/wendy_backlund" />
+
+                        <TextView
+                            android:id="@+id/speakername4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="Wendy Backlund" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/speaker5"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/imageView5"
+                            android:layout_width="120dp"
+                            android:layout_height="120dp"
+                            android:layout_margin="5dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/clay_harrington" />
+
+                        <TextView
+                            android:id="@+id/speakername"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="Clay Harrington" />
+                    </TableRow>
+                </TableLayout>
+            </LinearLayout>
+        </ScrollView>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
