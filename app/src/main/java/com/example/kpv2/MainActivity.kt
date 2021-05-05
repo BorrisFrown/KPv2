@@ -8,8 +8,10 @@ import android.widget.EditText
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.fragment_breakouts.*
 
 const val EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE"
+val breakoutScheduleFragment = BreakoutScheduleFragment()
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -64,6 +66,11 @@ class MainActivity : AppCompatActivity() {
         }
         startActivity(intent)
     }
+
+    fun showBreakoutSchedule(view: View) {
+        breakoutScheduleFragment.show(supportFragmentManager, "BreakoutDialog")
+    }
+
     
     fun showVanDesc(view: View) {
         showDesc(view, resources.getString(R.string.van_desc))

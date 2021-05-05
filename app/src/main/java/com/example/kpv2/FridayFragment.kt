@@ -5,55 +5,89 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import kotlinx.android.synthetic.main.fragment_friday.*
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+//Lists of time and event values
+val friTimesStr = listOf(
+        "8:00am",
+        "8:30am",
+        "9:00am - 10:45am",
+        "11:00am - 12:00pm",
+        "12:15am - 1:30pm",
+        "1:30pm",
+        "2:00pm - 3:00pm",
+        "3:15pm - 4:15pm",
+        "4:15pm - 6:30pm",
+        "5:30pm",
+        "6:00pm",
+        "6:30pm - 9:00pm"
+)
+val friEventsStr = listOf(
+        "Atrium opens",
+        "Auditorium opens",
+        "Session 2:\n" + "BOB HAZLETT",
+        "Session 3:\n" + "VAN COCHRANE",
+        "Prophetic Panel Lunch",
+        "Atrium opens",
+        "Breakout 1",
+        "Breakout 2",
+        "Dinner Break",
+        "Atrium opens",
+        "Auditorium opens",
+        "Session 4:\n" + "WENDY BACKLUND"
+)
 
-/**
- * A simple [Fragment] subclass.
- * Use the [FridayFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class FridayFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+            inflater: LayoutInflater, container: ViewGroup?,
+            savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_friday, container, false)
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment FridayFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            FridayFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        // Lists of time and event views
+        val friTimes = listOf(
+                friTime1,
+                friTime2,
+                friTime3,
+                friTime4,
+                friTime5,
+                friTime6,
+                friTime7,
+                friTime8,
+                friTime9,
+                friTime10,
+                friTime11,
+                friTime12
+        )
+        val friEvents = listOf(
+                friEvent1,
+                friEvent2,
+                friEvent3,
+                friEvent4,
+                friEvent5,
+                friEvent6,
+                friEvent7,
+                friEvent8,
+                friEvent9,
+                friEvent10,
+                friEvent11,
+                friEvent12
+        )
+
+        for (i in friTimes.indices){
+            if (i < friTimesStr.size) {
+                friTimes[i].text = friTimesStr[i]
+                friEvents[i].text = friEventsStr[i]
             }
+            else {
+                friTimes[i].text = ""
+                friEvents[i].text = ""
+            }
+        }
     }
 }
